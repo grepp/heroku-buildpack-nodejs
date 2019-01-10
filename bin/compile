@@ -102,15 +102,12 @@ install_bins() {
   local npm_engine=$(read_json "$BUILD_DIR/package.json" ".engines.npm")
   local yarn_engine=$(read_json "$BUILD_DIR/package.json" ".engines.yarn")
 
-  if [ -n "$iojs_engine" ]; then
-    echo "engines.iojs (package.json):  $iojs_engine (iojs)"
-  else
-    echo "engines.node (package.json):  ${node_engine:-unspecified}"
-  fi
-  echo "engines.npm (package.json):   ${npm_engine:-unspecified (use default)}"
-  if $YARN; then
-    echo "engines.yarn (package.json):  ${yarn_engine:-unspecified (use default)}"
-  fi
+  echo "engines.node (package.json):  ${NODE_VERSION}"
+  echo "engines.npm (package.json):   unspecified (use default)"
+
+  #if $YARN; then
+  #  echo "engines.yarn (package.json):  ${yarn_engine:-unspecified (use default)}"
+  #fi
   echo ""
 
   if [ -n "$iojs_engine" ]; then
