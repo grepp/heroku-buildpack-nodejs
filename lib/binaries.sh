@@ -32,7 +32,7 @@ install_nodejs() {
   local number="${NODE_VERSION}"
 
   echo "Pulling and installing node $number..."
-  tar xzf /tmp/node.tar.gz -C /tmp
+  tar xzf /tmp/binaries/node.tar.gz -C /tmp
   rm -rf "$dir"/*
   mv /tmp/node-v$number-$os-$cpu/* $dir
   chmod +x $dir/bin/*
