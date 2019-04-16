@@ -1,10 +1,9 @@
 install_yarn() {
   local dir="$1"
   local version=${YARN_VERSION}
-  local number
   local url
 
-  echo "Downloading and installing yarn ($number)..."
+  echo "Downloading and installing yarn ${version}..."
   rm -rf $dir
   mkdir -p "$dir"
   # https://github.com/yarnpkg/yarn/issues/770
